@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Weight Converter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+  body{
+  margin-top:70px;
+  background:#333;
+  color: #fff;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="display-4 text-center mb-3">Weight Converter</h1>
+      <form>
+        <div class="form-group">
+          <input id="KgInput" type="number" class="form-control form-control-lg" placeholder="Enter Kilograms...">
+        </div>
+      </form>
+      <div id="output">
+        <div class="card bg-primary mb-2 p-2">
+          <div class="card-block">
+            <h4>Grams:</h4>
+            <div id="gramsOutput"></div>
+          </div>
+        </div>
+
+        <div class="card bg-success mb-2 p-2">
+          <div class="card-block">
+            <h4>lbs:</h4>
+            <div id="lbsOutput"></div>
+          </div>
+        </div>
+
+		<div class="card bg-danger mb-2 p-2">
+          <div class="card-block">
+            <h4>Pounds:</h4>
+            <div id="pndOutput"></div>
+          </div>
+        </div>
+		
+        <div class="card bg-info mb-2 p-2">
+          <div class="card-block">
+            <h4>Ounces:</h4>
+            <div id="ozOutput"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.getElementById("output").style.visibility = "hidden";
+document.getElementById("KgInput").addEventListener("input", function(e) {
+document.getElementById("output").style.visibility = "visible";
+
+let Kg = e.target.value;
+document.getElementById("gramsOutput").innerHTML = Kg * 1000;
+document.getElementById("lbsOutput").innerHTML = Kg * 2.20462;
+document.getElementById("pndOutput").innerHTML = Kg / 0.45359237;
+document.getElementById("ozOutput").innerHTML = Kg / 0.02834952;
+});
+</script>
+    
+
+</body>
+</html>
